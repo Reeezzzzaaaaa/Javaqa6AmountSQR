@@ -4,9 +4,11 @@ public class RangeService {
 
     public int calcRange(int rangeMin, int rangeMax) {
 
-        SQRService sqrService = new SQRService();
-        int min = sqrService.calcSQRMin(rangeMin, rangeMax);
-        int max = sqrService.calcSQRMax(rangeMin, rangeMax);
+        SQRServiceMin sqrServiceMin = new SQRServiceMin();
+        int min = sqrServiceMin.calcSQRMin(rangeMin, rangeMax);
+
+        SQRServiceMax sqrServiceMax = new SQRServiceMax();
+        int max = sqrServiceMax.calcSQRMax(rangeMin, rangeMax);
 
         int range = (max - min) + 1;
         return range;
